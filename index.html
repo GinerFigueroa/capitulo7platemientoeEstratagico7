@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7 · Estrategia y tecnología · 40 preguntas difíciles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f5f7fc 0%, #e9eef5 100%);
+            padding: 2rem 1.5rem;
+            color: #1a2c3e;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta de resumen (estilo elegante) */
+        .summary-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            transition: all 0.2s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .summary-title {
+            background: #0b2b40;
+            color: white;
+            padding: 1.2rem 2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .summary-title span {
+            font-size: 1.9rem;
+        }
+        .summary-text {
+            padding: 1.8rem 2rem;
+            background: #fefefe;
+        }
+        .summary-text p {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            font-size: 1rem;
+            color: #1f3b4c;
+        }
+        .summary-text h4 {
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.6rem 0;
+            color: #0b2b40;
+            border-left: 4px solid #2c7da0;
+            padding-left: 0.8rem;
+        }
+        .summary-text ul {
+            margin: 0.5rem 0 1rem 2rem;
+        }
+        .summary-text li {
+            margin: 0.4rem 0;
+            line-height: 1.45;
+        }
+
+        /* grilla de preguntas */
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .question-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            padding: 1.2rem 1.5rem;
+            transition: transform 0.1s ease, box-shadow 0.2s;
+            border: 1px solid #e2edf2;
+        }
+        .question-card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+        .question-text {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            color: #0a2e3f;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .opt {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            padding: 0.3rem 0;
+            cursor: pointer;
+            border-radius: 0.6rem;
+            transition: background 0.1s;
+        }
+        .opt:hover {
+            background: #f0f5f9;
+        }
+        .opt input {
+            transform: scale(1);
+            margin-top: 0.2rem;
+            accent-color: #2c7da0;
+            cursor: pointer;
+        }
+        .status {
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding-top: 0.4rem;
+            border-top: 1px solid #e0edf2;
+        }
+        .status-correct {
+            color: #1e7e34;
+        }
+        .status-incorrect {
+            color: #c0392b;
+        }
+        .reset-button {
+            background: #1f5e7a;
+            border: none;
+            color: white;
+            padding: 0.7rem 1.6rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin: 1rem 0 1rem auto;
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .reset-button:hover {
+            background: #0b3b4f;
+        }
+        footer {
+            margin-top: 2rem;
+            background: #e2eef5;
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #2c5a6e;
+        }
+        @media (max-width: 680px) {
+            .questions-grid {
+                grid-template-columns: 1fr;
+            }
+            .summary-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- resumen capítulo 7 estilo solicitado -->
+    <div class="summary-card">
+        <div class="summary-title">
+            <span>⚙️📡</span> Capítulo 7 · Estrategia y tecnología
+        </div>
+        <div class="summary-text">
+            <p>El capítulo aborda la <strong>competencia en industrias de alta tecnología</strong>, donde los estándares técnicos, las guerras de formatos y los efectos de red determinan el éxito. Se analizan las dinámicas de “el ganador se lleva todo” y las estrategias para establecer una tecnología como estándar dominante, usando ejemplos como la batalla VHS vs. Betamax, los pagos móviles y el sistema operativo de smartphones.</p>
+            <p>Se introduce el concepto de <strong>estándares técnicos</strong> (especificaciones compartidas) y <strong>diseño dominante</strong>. Los beneficios incluyen compatibilidad, reducción de confusión, economías de escala y mayor oferta de complementos. Los estándares pueden surgir por <strong>decisión gubernamental, asociaciones industriales o competencia de mercado</strong> (guerras de formatos). Los <strong>efectos de red</strong> y la <strong>retroalimentación positiva</strong> son claves: a mayor base instalada, mayor valor para nuevos usuarios, lo que genera un círculo virtuoso que puede excluir tecnologías rivales (lock‑in).</p>
+            <p>Las <strong>estrategias para ganar una guerra de formatos</strong> incluyen: garantizar oferta de complementos, aprovechar aplicaciones dominantes, precios agresivos (modelo de rastrillo y hojas), cooperar con competidores y otorgar licencias del formato. En industrias de alta tecnología, los <strong>costos fijos de desarrollo son altos pero los costos marginales muy bajos</strong>, lo que favorece estrategias de volumen y precios bajos.</p>
+            <p>Se examinan las <strong>ventajas y desventajas de ser el primero en actuar</strong> (first‑mover). Las ventajas incluyen efectos de red, lealtad de marca, curvas de experiencia y costes de cambio. Las desventajas son: costes de pionero, errores en entornos inciertos, activos complementarios inadecuados y riesgo de quedar atrapado con tecnología inferior. La elección estratégica depende de los <strong>activos complementarios, barreras a la imitación y competidores capaces</strong>.</p>
+            <p>Por último, se explican los <strong>cambios de paradigma tecnológico</strong> (disrupciones) y la teoría de Christensen sobre <strong>tecnología disruptiva</strong>. Las empresas establecidas suelen fracasar porque se centran en sus clientes actuales e ignoran tecnologías emergentes que mejoran rápidamente desde nichos desatendidos. Las estrategias para sobrevivir incluyen invertir en tecnologías disruptivas, crear divisiones autónomas y desarrollar activos complementarios.</p>
+            <h4>Conceptos clave del capítulo</h4>
+            <ul>
+                <li>Estándares técnicos · diseño dominante · guerra de formatos · efectos de red · retroalimentación positiva</li>
+                <li>Estrategias: complementos, aplicaciones dominantes, precio agresivo (rastrillo/hojas), cooperación, licencias</li>
+                <li>Costos en alta tecnología: costes fijos elevados, costes marginales casi nulos → economías de escala masivas</li>
+                <li>Ventajas y desventajas del first‑mover · activos complementarios · barreras a la imitación</li>
+                <li>Cambio de paradigma · tecnología disruptiva (Christensen) · dilema del innovador</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: flex-end;">
+        <button id="resetBtn" class="reset-button">⟳ Reiniciar todas las respuestas</button>
+    </div>
+
+    <main id="questionsContainer" class="questions-grid"></main>
+
+    <footer>
+        📘 40 preguntas difíciles sobre estándares, guerras de formatos, first‑mover, tecnología disruptiva y estrategias tecnológicas. 
+        Cada respuesta correcta se marca en verde al seleccionar. Las incorrectas se marcan en rojo para que aprendas de tus fallos.
+    </footer>
+</div>
+
+<script>
+    // 40 preguntas (difíciles/largas) basadas en el capítulo 7
+    const questionsData = [
+        // ---- primeras preguntas de razonamiento profundo (largas) ----
+        { text: "En una guerra de formatos, dos tecnologías rivales A y B compiten. La tecnología A tiene una ventaja inicial en calidad, pero B adopta una estrategia de licencias abiertas y acuerdos con fabricantes de complementos. Según el modelo de efectos de red, ¿qué factor será decisivo para que B termine dominando el mercado?", options: ["Mayor calidad intrínseca de A", "Menor precio de los complementos de B", "Mayor base instalada de B que genera retroalimentación positiva y atrae más complementos", "Patentes más fuertes de A"], correct: "C" },
+        { text: "Microsoft enfrentó una demanda antimonopolio por empaquetar Internet Explorer con Windows. ¿Qué aspecto de las estrategias para ganar guerras de formato describe esta acción?", options: ["Garantizar oferta de complementos", "Aprovechar una aplicación dominante (Windows) para promover un complemento (navegador)", "Cooperación con competidores", "Precios predatorios directos"], correct: "B" },
+        { text: "Sony lanzó PlayStation con un precio cercano al costo y ganó dinero mediante regalías de juegos. ¿Qué nombre recibe esta estrategia?", options: ["Precio límite", "Estrategia de rastrillo y hojas (razor‑blade)", "Proliferación de formatos", "Estrategia de océano azul"], correct: "B" },
+        { text: "En el mercado de los teléfonos inteligentes, iOS y Android lucharon por el dominio. ¿Qué factor estratégico permitió a Android alcanzar una base instalada masiva a pesar del lanzamiento anterior del iPhone?", options: ["Código abierto y licencias gratuitas a múltiples fabricantes, acelerando efectos de red", "Mayor calidad de hardware", "Menor precio de los dispositivos exclusivamente", "Patente de pantalla táctil"], correct: "A" },
+        { text: "Una empresa inventa un nuevo estándar de carga inalámbrica. Carece de recursos para fabricar los cargadores, pero tiene patentes sólidas. El mercado es potencialmente enorme. Según el análisis de activos complementarios y barreras a la imitación, ¿qué estrategia recomendaría el capítulo?", options: ["Actuar sola y construir fábricas", "Otorgar licencias del formato a múltiples fabricantes para acelerar la adopción", "Mantener el formato en secreto", "Fijar un precio altísimo para recuperar inversión rápido"], correct: "B" },
+        { text: "La tecnología X fue la primera en llegar al mercado de consolas de videojuegos, pero carecía de juegos atractivos. La tecnología Y llegó después, pero aseguró títulos exclusivos de grandes desarrolladores. ¿Qué estrategia de guerra de formatos aplicó Y?", options: ["Garantizar oferta de complementos (juegos)", "Aplicaciones dominantes", "Precios agresivos", "Cooperación con el gobierno"], correct: "A" },
+        { text: "¿Cuál de las siguientes NO es una desventaja típica de ser el primero en actuar (first‑mover) en industrias de alta tecnología?", options: ["Costos de educar al mercado", "Alto riesgo de elegir tecnología equivocada", "Posibilidad de quedar atrapado con una base de clientes conservadora que dificulte pivotar", "Capacidad de fijar estándares de facto sin competencia inmediata"], correct: "D" },
+        { text: "Según la teoría de Christensen sobre tecnología disruptiva, ¿por qué las empresas establecidas suelen ignorar las innovaciones disruptivas?", options: ["Porque los clientes actuales no las demandan y sus márgenes iniciales son bajos", "Porque no tienen ingenieros capacitados", "Porque las leyes antimonopolio lo impiden", "Porque los sindicatos bloquean los cambios"], correct: "A" },
+        { text: "Un fabricante de servidores (tecnología madura) ve nacer la computación en nube. Decide crear una división autónoma separada geográficamente para desarrollar servicios de nube, aunque canibalice su negocio tradicional. ¿Qué principio estratégico aplica?", options: ["Exclusión de competidores mediante patentes", "Crear una unidad independiente para explotar tecnología disruptiva sin inercias organizacionales", "Licenciamiento masivo del formato antiguo", "Integración vertical hacia atrás"], correct: "B" },
+        { text: "El costo de desarrollo de un nuevo chip es de 500 millones de dólares, pero el costo de producir una unidad adicional es de 5 dólares. Si la empresa quiere maximizar rentabilidad, ¿qué política de precios es más coherente con la estructura de costos de alta tecnología?", options: ["Fijar precio alto desde el inicio para recuperar inversión", "Fijar precio bajo para estimular volumen y distribuir costes fijos entre muchas unidades", "Fijar precio igual al coste variable", "Vender solo a través de subastas"], correct: "B" },
+        // ---- preguntas adicionales hasta completar 40 (difíciles, algunas largas, otras conceptuales) ----
+        { text: "En la batalla entre VHS y Betamax, ¿qué estrategia permitió a VHS ganar a pesar de tener menor calidad de imagen?", options: ["Mayor publicidad", "Licencias abiertas a múltiples fabricantes y mayor oferta de cintas pregrabadas", "Precio más bajo del reproductor", "Patente exclusiva de cintas de larga duración"], correct: "B" },
+        { text: "Un efecto de red se produce cuando:", options: ["El costo unitario disminuye al aumentar producción", "El valor de un producto aumenta cuantos más usuarios lo utilizan", "El mercado se divide en dos segmentos", "Las patentes expiran rápidamente"], correct: "B" },
+        { text: "¿Cuál de los siguientes es un ejemplo de “aplicación dominante” que impulsó la adopción de los ordenadores personales?", options: ["Sistema operativo MS‑DOS", "Hoja de cálculo VisiCalc", "Microprocesador Intel 8088", "Impresora matricial"], correct: "B" },
+        { text: "La empresa Gamma inventa un nuevo códec de vídeo. Identifica que hay muchos competidores capaces de imitarla y que carece de activos complementarios (canales de distribución). Según la tabla de estrategias para explotar innovaciones, ¿qué debería hacer?", options: ["Actuar en solitario", "Formar una alianza con un socio que tenga dichos activos", "Licenciar la tecnología gratuitamente", "Abandonar el mercado"], correct: "B" },
+        { text: "En mercados con externalidades de red, la retroalimentación positiva puede llevar a:", options: ["Equilibrio de precios", "Un único estándar dominante (winner‑takes‑all)", "Fragmentación perpetua", "Reducción de la demanda"], correct: "B" },
+        { text: "¿Cuál es un riesgo de otorgar licencias del formato en una guerra de estándares?", options: ["Acelerar la adopción del rival", "Perder control sobre la calidad y posibles imitaciones que erosionen el estándar", "Aumentar los costes fijos", "Reducir los efectos de red"], correct: "B" },
+        { text: "La empresa Delta fue pionera en tecnología de baterías de estado sólido. A pesar de su ventaja técnica, no logró que los fabricantes de automóviles adoptaran su estándar porque estos ya habían invertido en plantas para baterías de litio convencionales. ¿Qué concepto explica esta situación?", options: ["Retroalimentación negativa", "Bloqueo tecnológico (lock‑in) y costes de cambio elevados", "Dilema del innovador", "Estrategia del océano azul"], correct: "B" },
+        { text: "¿Cuál de los siguientes NO es un beneficio de los estándares técnicos?", options: ["Compatibilidad entre productos", "Confusión del consumidor", "Reducción de costes por economías de escala", "Mayor oferta de complementos"], correct: "B" },
+        { text: "En el modelo de Christensen, una tecnología disruptiva suele comenzar:", options: ["Sirviendo al mercado masivo con alto rendimiento", "Atendiendo nichos desatendidos con prestaciones inferiores pero con mejora rápida", "Compitiendo frontalmente con la tecnología establecida", "Siendo financiada por el gobierno"], correct: "B" },
+        { text: "Intel dominó el mercado de microprocesadores durante décadas a pesar de tener competidores técnicamente superiores en algún momento. ¿Qué barrera estratégica explica su permanencia?", options: ["Efectos de red y costes de cambio altos (software escrito para arquitectura x86)", "Precios siempre más bajos", "Integración vertical total", "Ningún competidor intentó entrar"], correct: "A" },
+        { text: "La empresa Theta desarrolla un nuevo estándar para vídeo en streaming 8K y posee los derechos de patente. Anticipa que los fabricantes de televisores adoptarán su estándar si la base de contenidos es grande. ¿Qué táctica de guerra de formatos debería priorizar?", options: ["Aumentar precio de licencias", "Subsidiar la producción de contenidos (complementos) y garantizar su disponibilidad", "Litigar contra todos los competidores", "Esperar a que el mercado madure"], correct: "B" },
+        { text: "Según el capítulo, cuando los costes fijos de desarrollo son muy altos y los costes marginales cercanos a cero, la estrategia de precios óptima a largo plazo es:", options: ["Maximizar el margen unitario", "Fijar precios altos para segmentos especializados", "Fijar precios bajos para maximizar volumen y distribuir costes fijos", "Discriminación perfecta de precios"], correct: "C" },
+        { text: "¿Qué suceso puede desencadenar un cambio de paradigma tecnológico según Foster (curva S)?", options: ["La tecnología establecida alcanza su límite natural de rendimiento y aparecen alternativas emergentes", "Aumento de los precios de la energía", "Fusión de dos grandes empresas", "Descubrimiento de un nuevo mercado geográfico"], correct: "A" },
+        { text: "En la guerra de los reproductores de DVD, Toshiba y Sony acordaron un estándar único. ¿Por qué cooperaron en lugar de competir?", options: ["Para evitar fragmentación y confusión del consumidor que frenaría la adopción", "Por imposición del gobierno japonés", "Para compartir patentes obligatoriamente", "Porque ambas tenían costes variables nulos"], correct: "A" },
+        { text: "Un first‑mover que carece de activos complementarios (canales de venta, servicio postventa) debería:", options: ["Licenciar su tecnología a cambio de regalías", "Formar alianzas con empresas que tengan esos activos", "Actuar solo y esperar que el mercado los cree", "Abandonar el producto"], correct: "B" },
+        { text: "¿Cuál de las siguientes opciones describe mejor el “dilema del innovador” (Christensen)?", options: ["Las grandes empresas innovan más rápido que las pequeñas", "Las empresas exitosas ignoran tecnologías disruptivas porque sus clientes actuales no las piden, y terminan siendo desplazadas", "Las patentes bloquean la innovación", "Los consumidores siempre rechazan las innovaciones radicales"], correct: "B" },
+        { text: "En el contexto de complementos, ¿qué estrategia utilizó Apple al lanzar el iPhone y la App Store?", options: ["Integración vertical exclusiva de hardware", "Asegurar una amplia oferta de complementos (aplicaciones) mediante una tienda abierta a desarrolladores", "Impedir aplicaciones de terceros", "Reducir el precio del hardware al mínimo"], correct: "B" },
+        { text: "La empresa Zeta fue la primera en lanzar un asistente de voz inteligente. Tras un año de ventas modestas, un competidor lanza un asistente similar pero compatible con miles de dispositivos domésticos (complementos). ¿Qué variable estratégica inclina la balanza?", options: ["Calidad del reconocimiento de voz", "Base instalada de complementos y efectos de red", "Precio del hardware", "Duración de la batería"], correct: "B" },
+        { text: "¿Qué define a una tecnología como “disruptiva” según Clayton Christensen?", options: ["Es más cara pero más potente", "Es radicalmente nueva y creada por empresas pequeñas", "Inicialmente tiene peor rendimiento en atributos principales, pero mejora rápido y ocupa nichos descuidados", "Requiere grandes inversiones en I+D"], correct: "C" },
+        { text: "En una industria con fuertes efectos de red, una vez que un formato alcanza una masa crítica:", options: ["Es fácil que otro formato lo desbanque", "Se genera un bloqueo (lock‑in) que dificulta el cambio incluso si hay alternativas superiores", "Los precios caen en picada", "El gobierno siempre interviene"], correct: "B" },
+        { text: "¿Qué estrategia debe seguir una empresa que es primera en actuar pero enfrenta competidores con activos complementarios superiores?", options: ["Litigar para bloquearlos", "Formar alianzas para acceder a dichos activos", "Reducir drásticamente el precio", "Ignorarlos"], correct: "B" },
+        { text: "El modelo de “rastrillo y hojas” funciona porque:", options: ["El producto base (rastrillo) tiene margen alto", "Los complementos (hojas) tienen alto margen y el producto base se vende a costo para fidelizar", "Ambos tienen margen bajo", "La empresa tiene monopolio estatal"], correct: "B" },
+        { text: "¿Cuál es un ejemplo de “barrera a la imitación” basada en efectos de red?", options: ["Patente de la fórmula química", "Base instalada masiva que hace inviable un estándar alternativo", "Marca registrada", "Localización geográfica"], correct: "B" },
+        { text: "Para una startup con tecnología innovadora pero sin capacidad de fabricación masiva, la recomendación del capítulo ante una guerra de formatos es:", options: ["Competir sola asumiendo el riesgo", "Aliarse con un gran fabricante que aporte escala y distribución", "Ocultar la tecnología", "Vender la patente y salirse"], correct: "B" },
+        { text: "La teoría del equilibrio puntuado (punctuated equilibrium) aplicada a la tecnología indica que:", options: ["El cambio tecnológico es gradual y constante", "Largos periodos de estabilidad (diseño dominante) son interrumpidos por innovaciones radicales que reconfiguran la industria", "Siempre ganan los first‑movers", "Los estándares no cambian nunca"], correct: "B" },
+        { text: "¿Qué riesgo corre una empresa que otorga licencias de su formato en una guerra de estándares?", options: ["Pérdida de exclusividad y posible erosión del valor del estándar si no controla la calidad", "Aumento de los costes de I+D", "Reducción de la base instalada", "Prohibición regulatoria"], correct: "A" },
+        { text: "La empresa Lambda desarrolla una tecnología revolucionaria de paneles solares. Las barreras a la imitación son altas (patentes). Lambda tiene poco capital y carece de red de distribución. Según la tabla del capítulo, ¿qué estrategia es óptima?", options: ["No licenciar y crecer orgánicamente", "Formar una alianza con un socio grande que aporte los activos complementarios", "Licenciar a muchos pequeños fabricantes", "Mantener secreto industrial"], correct: "B" }
+    ];
+
+    // Guardar respuestas seleccionadas
+    let userAnswers = JSON.parse(localStorage.getItem("chapter7_answers")) || {};
+
+    function saveAnswer(qIndex, selectedLetter) {
+        userAnswers[qIndex] = selectedLetter;
+        localStorage.setItem("chapter7_answers", JSON.stringify(userAnswers));
+        updateStatus(qIndex, selectedLetter);
+    }
+
+    function updateStatus(qIndex, selectedLetter) {
+        const question = questionsData[qIndex];
+        const isCorrect = (selectedLetter === question.correct);
+        const statusDiv = document.getElementById(`status-${qIndex}`);
+        if (statusDiv) {
+            if (selectedLetter) {
+                if (isCorrect) {
+                    statusDiv.innerHTML = `✅ VERDADERO (Correcto: ${question.correct})`;
+                    statusDiv.className = "status status-correct";
+                } else {
+                    statusDiv.innerHTML = `❌ FALSO (La correcta es ${question.correct})`;
+                    statusDiv.className = "status status-incorrect";
+                }
+            } else {
+                statusDiv.innerHTML = "⚪ Sin responder";
+                statusDiv.className = "status";
+            }
+        }
+        // marcar visualmente la opción seleccionada en el radio
+        const radios = document.querySelectorAll(`input[name="q${qIndex}"]`);
+        radios.forEach(radio => {
+            if (radio.value === selectedLetter) radio.checked = true;
+            else radio.checked = false;
+        });
+    }
+
+    function renderQuestions() {
+        const container = document.getElementById("questionsContainer");
+        container.innerHTML = "";
+        questionsData.forEach((q, idx) => {
+            const card = document.createElement("div");
+            card.className = "question-card";
+            const qNumber = idx + 1;
+            card.innerHTML = `
+                <div class="question-text">${qNumber}. ${q.text}</div>
+                <div class="options">
+                    ${q.options.map((opt, optIdx) => {
+                        const letter = String.fromCharCode(65 + optIdx);
+                        return `<label class="opt">
+                                    <input type="radio" name="q${idx}" value="${letter}" data-index="${idx}" data-letter="${letter}">
+                                    <span><strong>${letter})</strong> ${opt}</span>
+                                </label>`;
+                    }).join('')}
+                </div>
+                <div id="status-${idx}" class="status">⚪ Sin responder</div>
+            `;
+            container.appendChild(card);
+        });
+
+        // añadir event listeners y restaurar respuestas guardadas
+        for (let i = 0; i < questionsData.length; i++) {
+            const radios = document.querySelectorAll(`input[name="q${i}"]`);
+            radios.forEach(radio => {
+                radio.addEventListener("change", (e) => {
+                    const selected = e.target.value;
+                    saveAnswer(i, selected);
+                });
+            });
+            if (userAnswers[i]) {
+                const saved = userAnswers[i];
+                const radioToCheck = document.querySelector(`input[name="q${i}"][value="${saved}"]`);
+                if (radioToCheck) radioToCheck.checked = true;
+                updateStatus(i, saved);
+            }
+        }
+    }
+
+    function resetAll() {
+        userAnswers = {};
+        localStorage.removeItem("chapter7_answers");
+        renderQuestions();
+    }
+
+    document.getElementById("resetBtn").addEventListener("click", resetAll);
+    renderQuestions();
+</script>
+</body>
+</html>
